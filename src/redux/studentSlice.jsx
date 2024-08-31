@@ -43,9 +43,6 @@ const studentsSlice = createSlice({
           if (course.complete) {
             toast.error("This course is already completed!!");
           } else {
-            course.complete = true;
-            course.progress = "100";
-            toast.success("Congratulations! You Successfully Completed The Course");
             
             const updatedCourse = {
               ...course,
@@ -54,7 +51,6 @@ const studentsSlice = createSlice({
             };
     
             const studentDocRef = doc(fireDB, 'students', student.id);
-    
             updateDoc(studentDocRef, {
               enrolledCourses: arrayRemove(course)
             })
@@ -71,6 +67,9 @@ const studentsSlice = createSlice({
               console.error("Error updating document: ", error);
               toast.error("Failed to update the course in the database.");
             });
+
+            course.complete = true;
+            course.progress = "100";
           }
         }
       }

@@ -11,7 +11,7 @@ function Syllabus({ data }) {
           Pre-requisits
         </h1>
         <hr className="text-gray-300 pb-2" />
-        {data.prerequisites.map((el, i) => (
+        {data?.prerequisites.map((el, i) => (
           <li className="py-1" key={i}>
             {el}
           </li>
@@ -27,19 +27,19 @@ function Syllabus({ data }) {
         </h3>
         <h3 className=" ">
           <span className="font-bold text-md text-purple-900 pr-2">Topic:</span>{" "}
-          {data.syllabus[0].topic}
+          {data?.syllabus[0]?.topic}
         </h3>
         <h3 className=" ">
           <span className="font-bold text-md text-purple-900 pr-2">
             Content:
           </span>{" "}
-          {data.syllabus[0].content}
+          {data?.syllabus[0]?.content}
         </h3>
       </div>
 
       {show && (
         <>
-          {data.syllabus.slice(1).map((el, i) => (
+          {data?.syllabus.slice(1).map((el, i) => (
             <div
               className="w-full bg-white hover:shadow-2xl  shadow-sm p-5 gap-4 flex flex-col my-6"
               key={i}
@@ -51,13 +51,13 @@ function Syllabus({ data }) {
                 <span className="font-bold text-md text-purple-900 pr-2">
                   Topic:
                 </span>{" "}
-                {el.topic}
+                {el?.topic}
               </h3>
               <h3 className=" ">
                 <span className="font-bold text-md text-purple-900 pr-2">
                   Content:
                 </span>{" "}
-                {el.content}
+                {el?.content}
               </h3>
             </div>
           ))}

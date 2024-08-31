@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 
 function CourseDetails() {
   const { id } = useParams();
+  
   const course = useSelector((state) =>
     state.courses.courses.find((course) => course.id === id)
   );
