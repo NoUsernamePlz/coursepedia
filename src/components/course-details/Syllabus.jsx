@@ -8,7 +8,7 @@ function Syllabus({ data }) {
     <div className="w-full max-w-7xl mx-auto my-10 px-4">
       <div className="my-6">
         <h1 className="font-bold text-xl text-purple-950 py-1">
-          Pre-requisits
+          Prerequisites
         </h1>
         <hr className="text-gray-300 pb-2" />
         {data?.prerequisites.map((el, i) => (
